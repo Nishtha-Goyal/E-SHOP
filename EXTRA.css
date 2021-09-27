@@ -1,0 +1,365 @@
+                                                          /* CSS FOR NAVBAR */
+header{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    background: #ECECFF;
+    box-shadow: 0px -8px 24px #000000;  
+}
+.topmost{
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+
+}
+.topmost::after{
+    content: "";
+    display: block;
+    line-height: 10%;
+}
+a
+{
+    text-decoration: none;
+}
+.nav2,.nav3
+{
+  display: flex;
+  justify-content: space-between;
+}
+body{
+    font-family: 'Poppin' , sans-serif;
+    margin:0;
+}
+.search-container button:hover{
+    background: #ccc;;
+}
+.search-container input[type=text]{
+    width: 30vw;
+    height: 20px;
+    min-width: 200px;
+    padding: 8px;
+    border: none;
+    border-radius: 0px;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0px;
+    
+}
+nav ul li{
+    display: inline-block;
+    font-style: normal;
+   margin:0 16px 0px 16px;
+   font-size: large;
+}
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+}
+nav ul li a:hover{
+   color: white;
+   border-radius: 10px;
+   background-color: black;
+}
+.search-button>button{
+    line-height: 34px;
+    font-size: 26px;
+    border-radius: 0px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.search-button>button:hover{
+    background: #ccc;;
+}
+.fa-shopping-cart{
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.fa-shopping-cart:hover{
+    color: black;
+    cursor: pointer;
+}
+.fa-heart, .fa-filter{
+    font-size: 28px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.fa-filter:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.icons{
+    margin-right: 14px;
+}
+
+                                                        /* CSS FOR LANDING PAGE */
+                                                     
+.rest 
+{
+   display:flex;
+   margin-top:150px;
+   margin-bottom:100px;
+    /* margin: 10% 5%; */
+    font-size: 30px; 
+    justify-content: space-evenly;
+}
+.both
+  {
+    background: linear-gradient(17.08deg, #757F9A 8.27%, #D7DDE8 91.99%);
+     text-align: center; 
+    justify-content: center;
+    width:50%;
+    /* height:100%; */
+  }
+ .again
+  {
+      display:flex;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
+      /* max-width: 500px; */
+      width:40%;
+      justify-content: space-between;
+  }
+  .men
+  {
+    background-image:url("images/men-lanscape.jpg"); 
+     height:33vh;
+     min-height: 170px;
+    background-size: 100% 100%;
+    box-shadow: 0px 4px 16px 8px rgba(0,0,0,0.25);
+    
+  }
+  .women
+  {
+    background-image:url("images/women-landscape.jpg") ;
+     height:33vh; 
+     min-height: 170px;
+       background-size: 100% 100%;
+    box-shadow: 0px 4px 16px 8px rgba(0,0,0,0.25);
+  }
+  .w, .m
+{
+   
+    font-size: 20px;
+    text-align: center;
+	height: 40px;
+	width:90px;
+    /* border-radius: 10px ; */
+    /* margin-top: 20vh; */
+	background-color: white;
+    border:none;
+    align-items:center;
+    justify-content: center;
+}
+.w:hover,.m:hover
+{
+    background-color: black;
+    color:white;
+    cursor: pointer;
+}
+.e, .s{
+    height:4vw;
+    width:25vw;
+    text-align: center;
+    font-size: 24px;
+}
+.s
+{
+    /* border-radius: 10px; */
+    
+    color:white;
+    width: 25vw;
+   
+    background-color: rgb(0,0,0);
+}
+@media only screen and (max-width: 600px) {
+    .s{
+        font-size: 20px;
+        height:45px;
+        width:150px;
+    }
+    .e{
+        font-size: 20px;
+        height:45px;
+        width:150px;
+    }
+    b {
+        font-size: 20px;
+    }
+    .rest{
+        flex-direction: column;
+    }
+    .both{
+        width: 100%;
+    }
+    .again{
+       width: 100%;
+    }
+  }
+  .discription.fa-heart{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.s:hover
+{
+    background-color: rgb(53 , 53 , 53);
+}
+html{
+    scroll-behavior: smooth;
+}
+
+   /* CSS FOR MEN AND WOMEN */
+
+
+.men-title{
+    margin-bottom: 4%;
+    text-align: center;   
+    font-size: larger;
+    background-color: black;
+    color:white;
+}
+#men-heading, #women-heading{
+    color: white;
+}
+.women-title{
+    margin-bottom: 4%;
+    text-align: center;   
+    font-size: larger;
+    background-color: black;
+    color:white;
+}
+/* .men-page
+{
+   background: #d1bebe;
+} */
+.all{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.col-4{
+    flex-basis: 20%;
+    padding: 4px;
+    min-width: 200px;
+    margin-bottom: 50px;
+}
+.col-4 img{
+    width: 100%;
+    transition: 0.5s;
+    
+    
+}
+.col-4 img:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.discription
+{
+    margin-top: 2%;
+    justify-content: center;
+}
+.heart{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom:-17px;
+}
+
+.fa-heart:hover{
+    color: red;
+    cursor: pointer;
+}
+.b
+{
+    height: 32px;
+    width:100%;
+    color:white;
+    background-color: black;
+}
+.b:hover{
+    background-color: rgb(53 , 53 , 53);
+    cursor: pointer;
+}
+                 /* FILTER PAGE */
+.sidenav {
+    height: 79%;
+    width: 0;
+    position: fixed;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #d9d9fa;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    /* box-shadow: 2px 0px 16px #000000; */
+}
+  
+.sidenav a {
+    padding: 8% 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.sidenav .closebtn:hover{
+    color:red;
+}
+.endline {
+    width: 70%;
+    height:3px;
+    background-color: #000000;
+
+}
+
+.filterBox {
+    /* border: 2px solid black; */
+    box-shadow: 0px 2px 8px #7a7a7a;  
+    border-radius: 6px;
+    margin: 15%;
+    padding: 8%;
+    justify-content: space-evenly;
+}
+
+.filterbtn {
+    font-size: 27px;
+    margin-left: 8px;
+}
+/* 
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+  
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+} */
+/* My works ends here*/
+.checkboxes{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding-left: 8%;
+}

@@ -1,0 +1,27 @@
+table,tr,td
+{
+   
+    /* border: 3px black solid; */
+    padding: 15px;
+   text-align: center;
+  background-color: rgb(255, 255, 255);
+  font-size: 30px;
+
+}
+.img{
+    height:150px;
+    width:120px;
+}
+table
+{
+    border-collapse: collapse;
+    border: 1px solid black;
+    width:100%;
+    margin:80px auto;
+   
+}
+.noitem
+{
+    margin-top: 40%;
+    margin:auto;
+}

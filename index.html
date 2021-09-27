@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="Cart_details.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE E-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="MS.css"> -->
+ <!-- <link rel="stylesheet" href="New Text Document.css">  -->
+<link rel="stylesheet" type="text/css" href="Cart.css"> 
+<link rel="stylesheet" type="text/css" href="EXTRA.css">
+</head>
+<body>
+  <div id="Cart">
+  <section class="topmost">
+     <header>
+         <div class="e-shop">
+           <a href="EXTRA.html"><h1 style="color:dodgerblue;" >E-SHOP</h1></a> 
+         </div>
+        <div>
+            <nav>
+                <ul>
+                   <li><a href="#men-heading">MEN</a></li>
+                   <li><a href="#women-heading">WOMEN</a></li>
+                 <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+         </div>
+         <div class="nav2">
+         <div class="search-container">
+            <form action="">
+                <input type="text" class="search-bar" placeholder="Search for product, brand and  more....." name="search">
+            </form>
+        </div>
+            <div class="search-button">
+                 <button type="submit"><i class="fa fa-search"></i></button>
+            </div> 
+        </div>
+        <div class="nav3">
+            <div class="icons">
+                <i class="fa fa-shopping-cart" onclick="showCart()"></i>
+                
+                </div>
+                <div >
+                <i class="fa fa-heart"></i>
+            </div>
+            <div>
+              <div id="mySidenav" class="sidenav">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <script type="text/javascript">
+                  //                              Category Filter                !!
+                      function filter_men(category) {
+                          var filtered_men = document.getElementById("filtered_men");
+                          filtered_men.style.display = category.checked ? "block" : "none";
+                      }
+                      function filter_women(category) {
+                          var filtered_women = document.getElementById("filtered_women");
+                          filtered_women.style.display = category.checked ? "block" : "none";
+                      }
+                  
+                  //                             Color Filter                       !!
+                      function filter_blue(blue) {
+                          var filtered_blue_men = document.getElementById("filtered_men").getElementsByClassName("filtered_blue")[0];
+                          filtered_blue_men.style.display = blue.checked ? "block" : "none";
+                          var filtered_blue_women = document.getElementById("filtered_women").getElementsByClassName("filtered_blue")[0];
+                          filtered_blue_women.style.display = blue.checked ? "block" : "none";
+                      }
+                      function filter_black(black) {
+                          var filtered_black_men = document.getElementById("filtered_men").getElementsByClassName("filtered_black")[0];
+                          filtered_black_men.style.display = black.checked ? "block" : "none";
+                          var filtered_black_women = document.getElementById("filtered_women").getElementsByClassName("filtered_black")[0];
+                          filtered_black_women.style.display = black.checked ? "block" : "none";
+                      }
+                      function filter_white(white) {
+                          var filtered_white_men = document.getElementById("filtered_men").getElementsByClassName("filtered_white")[0];
+                          filtered_white_men.style.display = white.checked ? "block" : "none";
+                          var filtered_white_women = document.getElementById("filtered_women").getElementsByClassName("filtered_white")[0];
+                          filtered_white_women.style.display = white.checked ? "block" : "none";
+                      }
+                      function filter_yellow(yellow) {
+                          var filtered_yellow_men = document.getElementById("filtered_men").getElementsByClassName("filtered_yellow")[0];
+                          filtered_yellow_men.style.display = yellow.checked ? "block" : "none";
+                          var filtered_yellow_women = document.getElementById("filtered_women").getElementsByClassName("filtered_yellow")[0];
+                          filtered_yellow_women.style.display = yellow.checked ? "block" : "none";
+                      }
+                      function filter_pink(pink) {
+                          var filtered_pink_men = document.getElementById("filtered_men").getElementsByClassName("filtered_pink")[0];
+                          filtered_pink_men.style.display = pink.checked ? "block" : "none";
+                          var filtered_pink_women = document.getElementById("filtered_women").getElementsByClassName("filtered_pink")[0];
+                          filtered_pink_women.style.display = pink.checked ? "block" : "none";
+                      }
+                      function filter_green(green) {
+                          var filtered_green_men = document.getElementById("filtered_men").getElementsByClassName("filtered_green")[0];
+                          filtered_green_men.style.display = green.checked ? "block" : "none";
+                          var filtered_green_women = document.getElementById("filtered_women").getElementsByClassName("filtered_green")[0];
+                          filtered_green_women.style.display = green.checked ? "block" : "none";
+                      }
+                      function filter_red(red) {
+                          var filtered_red_men = document.getElementById("filtered_men").getElementsByClassName("filtered_red")[0];
+                          filtered_red_men.style.display = red.checked ? "block" : "none";
+                          var filtered_red_women = document.getElementById("filtered_women").getElementsByClassName("filtered_red")[0];
+                          filtered_red_women.style.display = red.checked ? "block" : "none";
+                      }
+                  </script>
+                  <div class="checkboxes"><h2>FILTER</h2>
+                      <div><h2>Choose your Category </h2>
+                          <input type="checkbox" id="category" onclick="filter_men(this)"/> Men<br>
+                          <input type="checkbox" id="category" onclick="filter_women(this)"/> Women<br>
+                      </div>
+                      <div >
+                          <label for="colors"><h2>Choose your Color</h2>
+                              <input type="checkbox" id="white" onclick="filter_white(this)" /> White<br>  
+                              <input type="checkbox" id="green" onclick="filter_green(this)" /> Green<br>  
+                              <input type="checkbox" id="pink" onclick="filter_pink(this)" /> Pink<br>  
+                              <input type="checkbox" id="yellow" onclick="filter_yellow(this)" /> Yellow<br>  
+                              <input type="checkbox" id="blue" onclick="filter_blue(this)" /> Blue<br>  
+                              <input type="checkbox" id="red" onclick="filter_red(this)" /> Red<br>  
+                              <input type="checkbox" id="black" onclick="filter_black(this)" /> Black<br>   
+                      </div>
+                      <div class="all">
+                          <div id="filtered_men"  style="display: none; text-align: center;">
+                              <div class="filtered_blue" style="display: none; text-align: center;">
+                              <!--Filtering Blue Color MEN Product-->
+                              
+                                  <div class="col-4"><h3>Blue + MEN </h3>
+                                      <div  class="filterBox"><img src="images/Men-1.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                          <div class="discription">
+                                              <h4>Men shirt</h4>
+                                          </div>
+                                          <p>Rs. 760</p>
+                                          <p><button class="b"  onclick='addItem("Men-1.jpg","Men shirt",760)'>Add to Cart</button></p>
+                                      </div>
+                                      <div  class="filterBox"><img src="images/men-3.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                          <div class="discription">
+                                              <h4>Men denim jeans</h4>
+                                          </div>
+                                          <p>Rs. 760</p>
+                                          <p><button class="b"  onclick='addItem("men-3.jpg","Men denim jeans",760)'>Add to Cart</button></p>
+                                      </div>
+                                  </div>
+                                  <hr class="endline">
+                              </div>
+                              <div class="filtered_black" style="display: none; text-align: center;">
+                                  <!--Filtering Black MEN Color Product-->
+                                  
+                                      <div class="col-4"><h3>Black + MEN </h3>
+                                          <div  class="filterBox"><img src="images/men-2.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                              <div class="discription">
+                                                  <h4>Men jeans</h4>
+                                              </div>
+                                              <p>Rs. 1560</p>
+                                              <p><button class="b"  onclick='addItem("men-2.jpg","Men jeans",1560)'>Add to Cart</button></p>
+                                          </div>
+                                          <div  class="filterBox"><img src="images/men-9.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                              <div class="discription">
+                                                  <h4>Men black jeans</h4>
+                                              </div>
+                                              <p>Rs. 760</p>
+                                              <p><button class="b"  onclick='addItem("men-9.jpg","Men black jeans",760)'>Add to Cart</button></p>
+                                          </div>  
+                                      </div>
+                                      <hr class="endline">
+                                  
+                              </div>
+                              <div class="filtered_pink" style="display: none; text-align: center;">
+                                  <!--Filtering Pink MEN Color Product-->
+                                  
+                                      <div class="col-4"><h3>Pink + MEN </h3>
+                                          <div  class="filterBox"><img src="images/men-5.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                              <div class="discription">
+                                                  <h4>Men Pink shirt</h4>
+                                                  <p>Rs. 760</p>
+                                              </div>
+                                              <p><button class="b"  onclick='addItem("men-5.jpg","Men pink shirt",760)'>Add to Cart</button></p>
+                                          </div>
+                                      </div>
+                                      <hr class="endline">
+                                  
+                              </div>
+                              <div class="filtered_yellow" style="display: none; text-align: center;">
+                                  <!--Filtering Yellow MEN Color Product-->
+                                  
+                                      <div class="col-4"><h3>Yellow + MEN </h3>
+                                          <div  class="filterBox"><img src="images/men-4.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                              <div class="discription">
+                                                  <h4>Men yellow shirt</h4>
+                                              </div>
+                                              <p>Rs. 760</p>
+                                              <p><button class="b"  onclick='addItem("men-4.jpg","Men yellow shirt",760)'>Add to Cart</button></p>
+                                          </div>
+                                          <div  class="filterBox"><img src="images/men-8.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                              <div class="discription">
+                                                  <h4>Men shoes yellow</h4>
+                                              </div>
+                                              <p>Rs. 760</p>
+                                              <p><button class="b"  onclick='addItem("men-8.jpg","Men shoes yellow",760)'>Add to Cart</button></p>
+                                          </div>
+                                      </div>
+                                      <hr class="endline">
+                                  
+                              </div>
+                              <div class="filtered_white" style="display: none; text-align: center;">
+                                  <!--Filtering White MEN Color Product-->
+                                  
+                                      <div class="col-4"><h3>White + MEN </h3>
+                                          <div  class="filterBox"><img src="images/men-6.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                              <div class="discription">
+                                                  <h4>Men shoes</h4>
+                                              </div>
+                                              <p>Rs. 760</p>
+                                              <p><button class="b"  onclick='addItem("men-6.jpg","Men shoes",760)'>Add to Cart</button></p>
+                                          </div>
+                                      </div>
+                                      <hr class="endline">
+                                  
+                              </div>
+                              <div class="filtered_red" style="display: none; text-align: center;">
+                                  <!--Filtering Red MEN Color Product-->
+                                  
+                                      <div class="col-4"><h3>Red + MEN </h3>
+                                          <div class="discription"><h4>Sorry! But no More Red Products available.</h4></div>
+                                      </div>
+                                      <hr class="endline">
+                                    
+                              </div>
+                              <div class="filtered_green" style="display: none; text-align: center;">
+                                  <!--Filtering Green MEN Color Product-->
+                                
+                                      <div class="col-4"><h3>Green + MEN </h3>
+                                          <div class="discription"><h4>Sorry! But no More Green Products available.</h4></div>
+                                      </div>
+                                      <hr class="endline">
+                                  
+                              </div>
+                          </div>
+                          <div id="filtered_women"  style="display: none; text-align: center;">
+                              <!--Filtering Blue WOMEN Color Product-->
+                              <div class="filtered_blue" style="display: none; text-align: center;">
+                                  <div class="col-4"><h3>Blue + WOMEN </h3>
+                                      <div  class="filterBox"><img src="images/women-2.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                          <div class="discription">
+                                              <h4>women kurta 1</h4>
+                                          </div>
+                                          <p>Rs. 760</p>
+                                          <p><button class="b"  onclick='addItem("women-2.jpg","women kurta 1",760)'>Add to Cart</button></p>
+                                      </div>
+                                  </div>
+                                  <hr class="endline">
+                              </div>
+                              <!--Filtering Black WOMEN Color Product-->
+                              <div class="filtered_black" style="display: none; text-align: center;">
+                                  <div class="col-4"><h3>Black + WOMEN </h3>
+                                      <div  class="filterBox"><img src="images/women-6.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                          <div class="discription">
+                                              <h4>women kurta 5</h4>
+                                          </div>
+                                          <p>Rs. 760</p>
+                                          <p><button class="b"  onclick='addItem("women-6.jpg","women kurta 5",760)'>Add to Cart</button></p>
+                                      </div>
+
+                                      <div  class="filterBox"><img src="images/women-8.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                          <div class="discription">
+                                              <h4>women kurta 7</h4>
+                                          </div>
+                                          <p>Rs. 760</p>
+                                          <p><button class="b"  onclick='addItem("women-8.jpg","women kurta 7",760)'>Add to Cart</button></p>
+                                      </div>      
+                                  </div>
+                                  <hr class="endline">
+                              </div>
+                              <!--Filtering White WOMEN Color Product-->
+                              <div class="filtered_white" style="display: none; text-align: center;">
+                                  <div class="col-4"><h3>White + WOMEN </h3>
+                                      <div class="discription"><h4>Sorry! But no More White Products available.</h4></div>
+                                  </div>
+                                  <hr class="endline">
+                              </div>
+                              <!--Filtering Yellow WOMEN Color Product-->
+                              <div class="filtered_yellow" style="display: none; text-align: center;">
+                                  <div class="col-4"><h3>Yellow + WOMEN </h3>
+                                      <div  class="filterBox"><img src="images/women-3.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                          <div class="discription">
+                                              <h4>women kurta 2  </h4>
+                                          </div>
+                                          <p>Rs. 760</p>
+                                          <p><button class="b"  onclick='addItem("women-3.jpg","women kurta 2",760)'>Add to Cart</button></p>
+                                      </div>
+                                  </div>
+                                  <hr class="endline">
+                              </div>
+                              <!--Filtering Pink WOMEN Color Product-->
+                              <div class="filtered_pink" style="display: none; text-align: center;">
+                                  <div class="col-4"><h3>Pink + WOMEN </h3>
+                                      <div class="filterBox"><img src="images/women-5.jpg" alt="" class="product-image" style="height: 40%; width: 30%;">
+                                          <div class="discription">
+                                              <h4>women kurta 4</h4>
+                                              <p>Rs. 760</p>
+                                          </div>
+                                          <p><button class="b" onclick='addItem("women-5.jpg","women kurta 4",760)'>Add to Cart</button></p>
+                                      </div>
+                                  </div>
+                                  <hr class="endline">
+                              </div>
+                              <!--Filtering Green WOMEN Color Product-->
+                              <div class="filtered_green" style="display: none; text-align: center;">
+                                  <div class="col-4"><h3>Green + WOMEN </h3>
+                                      <div class="discription"><h4>Sorry! But no More Green Products available.</h4></div>
+                                  </div>
+                                  <hr class="endline">
+                              </div>
+                              <!--Filtering Red WOMEN Color Product-->
+                              <div class="filtered_red" style="display: none; text-align: center;">
+                                  <div class="col-4"><h3>Red + WOMEN </h3>
+                                      <div class="discription"><h4>Sorry! But no More Red Products available.</h4></div>
+                                  </div>
+                                  <hr class="endline">
+                              </div>  
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div><div class="filterbtn"><span  style="cursor:pointer" onclick="openNav()"><i class="fa fa-filter"></i></span></div>
+          </div>  
+        </div>   
+     </header>
+    </section>
+    
+     <section class="landing-page">
+        <div class="rest">
+         
+            <div class="both">
+                <p >Special Offer</p>
+                <b>SUBSCRIBE </br>AND<p style="color:#DA3434;"> GET 10% OFF</p></b>
+             <div class="email">
+                <input  class="e" type="email" id= "email" name="email" placeholder="Enter your Email id">
+             </div>
+             <div class="subscribe">
+                <p > <input class="s" type="button" value="Subscribe"></p>
+             </div>
+             </div>
+             <div class="again">
+                 
+             <div class="men">
+                <a href="#men-heading"><input class="m" type="submit" value="Men"></a>
+             </div>
+             <div class="women">
+                <a href="#women-heading"> <input class="w" type="submit" value="Women"></a>
+             </div>
+            </div>
+            </div>
+     </section>
+
+        <!-- CODE FOR MEN  -->
+          <section class="men-page">
+      <div class="men-title"><a id="men-heading"><h3  style="text-align: center; font-size: 30px; line-height: 64px; font-weight: 400; ">MEN SECTION</h3></a></div>
+   
+        <div class="all" >
+            <div class="col-4">
+                <img src="images/Men-1.jpg" alt="" class="product-image">
+                <div class="discription">
+                  <div class="heart">
+                    <div>Men shirt</div>
+                    <i class="fa fa-heart"></i>
+                      </div>
+                </div>
+                <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+                <p><button class="b" onclick='addItem("Men-1.jpg","Men shirt",760)'>Add to Cart</button></p>
+            </div>
+            <div class="col-4">
+                <img src="images/men-2.jpg" alt="" class="product-image">
+                <div class="discription">
+                  <div class="heart">
+                    <div>Men jeans</div>
+                    <i class="fa fa-heart"></i>
+                     </div>
+                </div>
+                <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+                <p><button class="b" onclick='addItem("men-2.jpg","Men jeans",760)'>Add to Cart</button></p>
+            </div>
+            <div class="col-4">
+                <img src="images/men-3.jpg" alt="" class="product-image">
+                <div class="discription">
+                  <div class="heart">
+                    <div>Men denim jeans</div>
+                    <i class="fa fa-heart"></i>
+                 </div>
+                </div>
+                <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+                <p><button  class="b"onclick='addItem("men-3.jpg","Men denim jeans",760)'>Add to Cart</button></p>
+            </div>
+            <div class="col-4">
+                <img src="images/men-4.jpg" alt="" class="product-image">
+                <div class="discription">
+                  <div class="heart">
+                    <div>Men yellow shirt</div>
+                    <i class="fa fa-heart"></i>
+                  </div>
+                </div>
+                <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+                <p><button class="b" onclick='addItem("men-4.jpg","Men yellow shirt",760)'>Add to Cart</button></p>
+            </div>
+       
+        
+        
+            <div class="col-4">
+                <img src="images/men-5.jpg" alt="" class="product-image">
+                <div class="discription">
+                  <div class="heart">
+                    <div>Men Pink shirt</div>
+                    <i class="fa fa-heart"></i>
+                   </div>
+                </div>
+                <div>
+                <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+                <p><button class="b" onclick='addItem("men-5.jpg","Men pink shirt",760)'>Add to Cart</button></p>
+               </div>
+            </div>
+            <div class="col-4">
+                <img src="images/men-6.jpg" alt="" class="product-image">
+                <div class="discription">
+                   <div class="heart">
+                    <div>Men shoes</div>
+                    <i class="fa fa-heart"></i>
+                  </div>
+                    <div>
+                    <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+                <p><button class="b" onclick='addItem("men-6.jpg","Men shoes",760)'>Add to Cart</button></p></div>
+                </div>
+                
+            </div>
+            <div class="col-4">
+                <img src="images/men-9.jpg" alt="" class="product-image">
+                <div class="discription">
+                  <div class="heart">
+                    <div>Men black jeans</div>
+                    <i class="fa fa-heart"></i>
+                   </div>
+                </div>
+                <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+                <p><button class="b" onclick='addItem("men-9.jpg","Men black jeans",760)'>Add to Cart</button></p>
+            </div>
+            <div class="col-4">
+                <img src="images/men-8.jpg" alt="" class="product-image">
+                <div class="discription">
+                  <div class="heart">
+                    <div>Men shoes yellow</div>
+                    <i class="fa fa-heart"></i>
+                   </div>
+                </div>
+                <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+                <p><button class="b" onclick='addItem("men-8.jpg","Men shoes yellow",760)'>Add to Cart</button></p>
+            </div>
+        </div>
+    </section>     
+                                           <!-- CODE FOR WOMEN -->
+
+<section class="women-page">
+  <div class="women-title"><a id="women-heading"> <h3  style="text-align: center; font-size: 30px; line-height: 64px; font-weight: 400; ">WOMEN SECTION</h3></a></div>
+ 
+  <div class="all" >
+      <div class="col-4">
+          <img src="images/women-1.jpg" alt="" class="product-image">
+          <div class="discription">
+            <div class="heart">
+              <div>women kurta 8</div>
+              <i class="fa fa-heart"></i>
+           </div>
+          </div>
+          <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+          <p><button class="b" onclick='addItem("women-1.jpg","women kurta 8",760)'>Add to Cart</button></p>
+      </div>
+      <div class="col-4">
+          <img src="images/women-2.jpg" alt="" class="product-image">
+          <div class="discription">
+            <div class="heart">
+              <div>women kurta 1</div>
+              <i class="fa fa-heart"></i></div>
+          </div>
+          <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+          <p><button class="b" onclick='addItem("women-2.jpg","women kurta 1",760)'>Add to Cart</button></p>
+      </div>
+      <div class="col-4">
+          <img src="images/women-3.jpg" alt="" class="product-image">
+          <div class="discription">
+            <div class="heart">
+              <div>women kurta 2  </div>
+              <i class="fa fa-heart"></i></div>
+          </div>
+          <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+          <p><button class="b" onclick='addItem("women-3.jpg","women kurta 2",760)'>Add to Cart</button></p>
+      </div>
+      <div class="col-4">
+          <img src="images/women-4.jpg" alt="" class="product-image">
+          <div class="discription">
+            <div class="heart">
+              <div>women kurta 3</div>
+              <i class="fa fa-heart"></i></div>
+          </div>
+          <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+          <p><button class="b" onclick='addItem("women-4.jpg","women kurta 3",760)'>Add to Cart</button></p>
+      </div>
+ 
+  
+  
+      <div class="col-4">
+          <img src="images/women-5.jpg" alt="" class="product-image">
+          <div class="discription">
+            <div class="heart">
+              <div>women kurta 4</div>
+              <i class="fa fa-heart"></i></div>
+
+          </div>
+          <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+          <p><button  class="b" onclick='addItem("women-5.jpg","women kurta 4",760)'>Add to Cart</button></p>
+      </div>
+      <div class="col-4">
+          <img src="images/women-6.jpg" alt="" class="product-image">
+          <div class="discription">
+            <div class="heart">
+              <div>women kurta 5</div>
+              <i class="fa fa-heart"></i></div>
+
+          </div>
+          <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+          <p><button class="b" onclick='addItem("women-6.jpg","women kurta 5",760)'>Add to Cart</button></p>
+      </div>
+      <div class="col-4">
+          <img src="images/women-7.jpg" alt="" class="product-image">
+          <div class="discription">
+            <div class="heart">
+              <div>women kurta 6</div>
+              <i class="fa fa-heart"></i></div>
+
+          </div>
+          <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+          <p><button class="b" onclick='addItem("women-7.jpg","women kurta 6",760)'>Add to Cart</button></p>
+      </div>
+      <div class="col-4">
+          <img src="images/women-8.jpg" alt="" class="product-image">
+          <div class="discription">
+            <div class="heart">
+              <div>women kurta 7</div>
+              <i class="fa fa-heart"></i></div>
+
+          </div>
+          <p>Rs. 760 <s style="color: #767676;">Rs. 1600</s> <span style="color: red;"> (50% off)</span> </p>
+          <p><button class="b" onclick='addItem("women-8.jpg","women kurta 7",760)'>Add to Cart</button></p>
+      </div>
+      </div>
+      </section>
+      
+    </div>
+</body>
+</html>
